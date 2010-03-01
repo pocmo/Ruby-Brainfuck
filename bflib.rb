@@ -16,21 +16,16 @@ class Brainfuck
   def self.evaluate code
     le = code.length
     cp = -1 # code pointer
-    p = 0 # cell pointer
+    p = 0   # cell pointer
     c = [0] # cells
     bm = {} # bracket map, jump directly to matching brackets! :)
-    bc = 0 # bracket counter
-    s = [] # bracket stack
+    bc = 0  # bracket counter
+    s = []  # bracket stack
     ccp = 0 # code pointer for cleaned code
 
     # valid commands
     commands = [">", "<", "+", "-", ".", "[", "]", ","]
-
-    cleaned = [] # code goes here
-    
-    commands = [">", "<", "+", "-", ".", "[", "]", ","]
-
-    cleaned = [] # code goes here
+    cleaned  = [] # code goes here
 
     # Only select valid commands and build bracket map
     # Now there's also some time for bracket syntax checking :)
