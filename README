@@ -3,10 +3,13 @@ This is just a small Brainfuck interpreter written in Ruby.
 Run it:
 ./bf.rb yourcode.b
 
+If you want to run Brainfuck code from your own Ruby programm,
+take a look at bflib.rb.
+
 You'll need the highline gem. You should get it by typing:
 $ sudo gem install highline 
 
-This code iThis code using ruby 1.9(.1) just because it's faster ;)
+This code using ruby 1.9(.1) just because it's faster ;)
 
 http://en.wikipedia.org/wiki/Brainfuck
 
