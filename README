@@ -1,0 +1,8 @@
+This is just a small Brainfuck interpreter written in Ruby.
+
+Run it:
+./bf.rb yourcode.b
+
+It's using ruby 1.9(.1) just because it's faster ;)
+
+http://en.wikipedia.org/wiki/Brainfuck
