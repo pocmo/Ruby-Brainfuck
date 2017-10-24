@@ -16,7 +16,8 @@ include HighLine::SystemExtensions
 msec = Time.now.to_f * 1000;
  
 code = ARGF.read
-le = code.length
+le = code.length # input length
+cl = 0 # cleaned length
 cp = -1 # code pointer
 p = 0 # cell pointer
 c = [0] # cells
@@ -38,7 +39,7 @@ until (cp+=1) == le
     when ?] then (bm[s.pop] = ccp) && bc -= 1
   end
   bc < 0 && puts("Ending Bracket without opening, mismatch at #{cp}") && exit
-  commands.include? code[cp] && (cleaned.push code[cp]) && ccp += 1
+  commands.include?(code[cp]) && (cleaned.push code[cp]) && ccp += 1
 end
  
 !s.empty? && puts("Opening Bracket without closing, mismatch at #{s.pop}") && exit
@@ -46,8 +47,9 @@ end
 # reset defaults
 cp = -1
  
+cl = cleaned.length
 # now lets interprete the code :)
-until (cp+=1) == le
+until (cp+=1) == cl
   case cleaned[cp]
     when ?> then (p += 1) && c[p].nil? && c[p] = 0
     when ?< then p <= 1 ? p = 0 : p -= 1
