@@ -38,7 +38,7 @@ until (cp+=1) == le
     when ?] then (bm[s.pop] = ccp) && bc -= 1
   end
   bc < 0 && puts("Ending Bracket without opening, mismatch at #{cp}") && exit
-  commands.include? code[cp] && (cleaned.push code[cp]) && ccp += 1
+  commands.include?(code[cp]) && (cleaned.push code[cp]) && ccp += 1
 end
  
 !s.empty? && puts("Opening Bracket without closing, mismatch at #{s.pop}") && exit
